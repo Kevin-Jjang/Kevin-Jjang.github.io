@@ -1,0 +1,20 @@
+<header>
+    <a href="{{ site.baseurl }}">
+        {% if page.title == "Poetry" %}
+        <h2 class="header-title">Kevillanelle</h2>
+        {% else %}
+        <h2 class="header-title">Kevin Jang</h2>
+        {% endif %}
+    </a>
+    <a class="boxed-link" href="https://www.linkedin.com/in/kevinjjang" target="_blank"
+        rel="noopener noreferer">LinkedIn</a>
+    <nav class="nav-container">
+        <ul class="navbar">
+            {% for item in site.data.navigation %}
+            <li class="nav-item"><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+</header>

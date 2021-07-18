@@ -1,0 +1,18 @@
+- name: Alchemy
+  url: https://alchemy.ucsd.edu
+  logo:
+  description: Alchemy is a journal of translation under the Linguistics and Literature departments at UCSD. I am currently working as an Editor and the Webmaster (Design, Production, UX).
+- name: Other People
+  url: https://otherpeoplesd.com
+  logo:
+  description: Other People is the first undergraduate literary magazine at UCSD. I am currently the Web Producer and UX Designer, working closely with the Editorial, Content, and Design teams to enhance the experience of our magazine's website.
+- name: Kaleidoscoped Magazine
+  url: https://kaleidoscopedmag.com
+  logo:
+  description: Kaleidoscoped Magazine was formed by the MFA students at UCSD. Check out their publications through their unique kaleidoscope UI!
+- name: UCSD Dragon Boat Official Website
+  url: https://ucsddragonboat.com
+  description: Interested in joining dragon boat? Visit our website and FB page here!
+- name: Girls Who Code
+  url: https://girlswhocode.com/programs
+  description: Summer Internship Program, Mentoring, Networking

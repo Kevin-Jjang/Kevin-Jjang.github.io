@@ -1,0 +1,44 @@
+header {
+    position: relative;
+    padding: 16px 24px;
+}
+
+.header-title {
+    position: absolute;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.nav-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    margin-left: 300px;
+    margin-right: 96px;
+    padding: 0px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-item {
+    padding: 8px 4px;
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+header .boxed-link {
+    position: absolute;
+    right: 16px;
+}
+
+header hr {
+    margin-left: auto;
+    margin-right: auto;
+}
+.hr60p { width: 60%; }
+.hr55p { width: 55%; }

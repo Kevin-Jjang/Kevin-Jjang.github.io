@@ -1,0 +1,101 @@
+
+// font-family: 'Montserrat', 'Open Sans', sans-serif;
+// font-family: 'PT Serif', 'Merriweather', 'Roboto Slab', serif;
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color: black;
+}
+
+h1 {
+    text-align: unset;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+.serif {
+    font-family: 'PT Serif', 'Merriweather', 'Roboto Slab', serif;
+}
+
+.sans {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+button {
+    padding: 16px 24px;
+    background-color: transparent;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a, a:visited {
+    font-family: 'Open Sans', sans-serif;
+    color: inherit;
+    text-decoration: underline;
+    // font-weight: bold;
+    // font-style: italic;
+}
+
+a:hover, a:focus, a:focus-visible {
+    opacity: 0.8;
+}
+.boxed-link {
+    padding: 16px 24px;
+    background-color: #000;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: italic;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #bbbbbb;
+}
+.hr40 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+}
+
+.font-light {
+    opacity: 0.5;
+}
+
+.center {
+    text-align: center;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
