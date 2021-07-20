@@ -1,12 +1,10 @@
-- name: Home
-  link: /
 - name: Portfolio
   link: /portfolio
 - name: Poetry
   link: /poetry
 # - name: Blog
 #   link: /blog
-- name: Links
-  link: /links
+- name: Resources
+  link: /resources
 - name: Style Guide
   link: /style-guide

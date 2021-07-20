@@ -6,11 +6,15 @@ title: Other People
 <main class="landing-container other-people">
     <img style="width: 350px" src="{{ site.baseurl }}/assets/img/OP-Logo.svg"
         alt="The Other People logo is a transparent venn diagram with a black center.">
-    <h1>Other People Development</h1>
+    <h1>Other People Magazine</h1>
     <p class="center font-light">June 2021 - Present</p>
     <article class="content-container">
-        <a href="https://otherpeoplesd.com/" target="_blank" rel="noopener noreferer">Other People Website</a><br />
-        <a href="https://github.com/Other-People-UCSD/Pink-Currents" target="_blank" rel="noopener noreferer">GitHub</a>
+        <div class="portfolio-links">
+            <span><a href="https://otherpeoplesd.com/" target="_blank" rel="noopener noreferer">Website</a></span>
+            <span><a href="https://github.com/Other-People-UCSD/Pink-Currents" target="_blank"
+                    rel="noopener noreferer">GitHub</a></span>
+        </div>
+
 
         <ol class="toc">
             <li><a href="#op-overview">Overview</a></li>
@@ -20,28 +24,88 @@ title: Other People
             <li><a href="#op-dev">New Digital Art Development</a></li>
         </ol>
         <h4 id="op-overview">OVERVIEW</h4>
-        <p><strong>Overview</strong>: Among a large team of literary editors and designers, I am currently Other
-            People's
-            only developer. Therefore, my activities cover a broad range from Web Production to Digital Development to
-            UX Design.</p>
+        <p><strong>Other People Literary Magazine</strong>, established in 2019, is known as UC San Diego's first
+            undergraduate-run literary magazine. Among a large team of literary editors and designers, I am currently
+            Other
+            People's only code-based developer. Therefore, my activities cover a broad range from Web Production to
+            Digital Development to UX Design. I am constantly communicating with directors and members to accomplish all
+            of the tasks needed to maintain and enhance our creative display of UCSD students' works on our website.</p>
+
+        <p>My responsibilities are performed on GitHub (codebase), GitHub Pages (hosting), Jekyll (static site
+            generator), Forestry.io (CMS), Miro (UX wireframes), and Webflow (UI layouts)</p>
 
 
         <h4 id="op-management">INTERNAL MANAGEMENT</h4>
+        <p>I create architectural design records (ADRs) for any major change to the website. These ADRs are about
+            something technical, yet I must write them in a way that the non-developer directors are able to understand.
+            Therefore, I give context on the subject and describe the pros and cons of each decision option. These
+            records document changes that happen in the website code and asserts responsibility onto my actions when
+            making changes. ADRs are both stored in Markdown format within GitHub, as well as inside our Google Drive
+            under our website folder.</p>
+
+        <p>Other recording documents include a changelog within the GitHub repository for the minor updates that do not
+            require decisions and a checklist of tasks that I need to complete by certain dates like a collection
+            release.</p>
         <h4 id="op-ux">UX Research & Design</h4>
+        <p>Using my previous experiences with UX Design, I fixed many accessibility issues concerning screen-reader and
+            keyboard support. One of the biggest issues was an inaccessible navigation menu in the header. Pressing
+            enter would not open the menu because it was a link instead of a button. Furthermore, links did not have a
+            selection outline and tabbing past the link would fall into the hidden navigation elements, when it should
+            tab to the main content. This happened because the navigation container was positioned outside the browser
+            and did not hide the links inside it.</p>
+
+        <p>To solve these problems, I changed the navigation link to a button so a user can use the keyboard to trigger
+            the JavaScript function. I included the <code>display: none</code> style to effectively hide the contents of
+            the navigation menu when it was closed. This solved the tabbing logic so the menu button would redirect to
+            the content. These fixes solved the main issues with navigation, but the final issue was the select
+            indicator around the menu button. Searching through the codebase, I identified and removed a
+            <code>user-select: none</code> line that worked against accessibility principles. I understood that was done
+            to secure the published posts from being copied, but it was still easy to select or screenshot the
+            literature and art with that line of code.
+        </p>
+
+        <p>Other UX concerns include the search function because the codebase currently utilizes two different
+            navigation menus. Landing pages contain the functional search bar directly in the menu, but posts contain a
+            link to the search page instead of the search bar. The wireframe below details the difference between the
+            two header implementations and the steps it takes to access the search function. This UX issue is still
+            being considered by the directors. In the meantime, I am researching ways that would require a separate
+            search page. Since the menu can be opened in any user approach, accessing this search function in the menu
+            should not be a problem.</p>
         <h4 id="op-prod">Digital Magazine Production</h4>
-        <p>Even though I have had access to the <a href="https://forestry.io/" target="_blank"
+        <p>My role has taken over the website production responsibility formerly held by my co-editor-in-chief. Since I
+            have more experience with responsive Markdown/HTML/CSS and the Jekyll site generator, I can quickly curate
+            quality posts for standalone content or a whole Collection. In addition, I use <code>br/, strong, em</code>
+            instead of the Markdown syntax in case the content gets transferred to a different site generator that does
+            not convert Markdown to HTML.</p>
+        <p>Before I became the Web Producer, the website did not have Collection No. 2 uploaded for about four months. I
+            was able to get all thirteen of the published posts uploaded, formatted, and proofread within eight hours of
+            work! Collection No. 3 has not been released yet, but I already uploaded and formatted the fifteen posts in
+            about three hours. The editorial process is still ongoing, so I would have to proofread the posts later in
+            the final version before our release in Fall!</p>
+        <p>Even though I have access to the <a href="https://forestry.io/" target="_blank"
                 rel="noopener noreferer">Forestry.io</a>
-            CMS to curate new posts for Collections, I prefer working directly in
-            VSCode for efficiency. Forestry.io effectively allows the non-developers to create and manage front-matter.
-            To provide more accessibility principles into their production, I added alt-text fields and instructed them
-            where alt text goes.</p>
+            CMS to curate new posts for Collections. I was able to understand the CMS in an hour of reading through
+            onboarding, reading its documentation and creating mock posts, but I prefer working directly in
+            VSCode and Jekyll for efficiency. Forestry is slow with previewing new posts, so I run Jekyll locally to
+            generate the preview within seconds. We use Forestry because it effectively allows the non-developers to
+            create posts and manage the front-matter in a nice UI. The CMS is also headless, meaning that we can switch
+            to a different CMS to connect to our content, if needed.</p>
         <h4 id="op-dev">New Digital Art Development</h4>
-        <p>Another benefit of using a code-based website is that developers can create anything! I have implemented a
-            slideshow function for the homepage to showcase featured posts from the current Collection.</p>
-        <p>In the upcoming year, I plan to develop dynamic, native interfaces for digital storytelling. Like manga
-            readers,
-            this would give users the chance to interact with the content and keep their focus on paragraphs at a time.
-            The tone of the prose would be amplified by isolated text that pops out to the reader after every click
-            through the dynamic reader.</p>
+        <p>The benefit of using GitHub Pages to host our website is that it is entirely custom-coded. Therefore,
+            developers can create anything without being constrained by head-based CMS! This grants us the freedom to
+            develop art within digital media at the limits of our imagination!</p>
+
+        <p>Since we are separated by distanced learning, I have not been able to ask everyone for creative ideas to
+            build for the website. However, for Collection No. 3's upcoming release I have implemented a slideshow
+            function for the homepage. The slideshow will showcase featured posts from the latest Collection and link
+            directly to them. My UX design of this slideshow would more effectively indicate that we have a new
+            Collection and makes the Issuu link stand out instead of having it always in the hidden navigation menu. The
+            featured images will fill up the user's screen upon entering the website, so it is easier to see the artwork
+            in comparison to the small image previews in the genre catalogues.</p>
+        <p>In the upcoming year, when we return to campus, I plan to develop dynamic, native interfaces for digital
+            storytelling and mixed media art. One idea takes the form of a fade-in-out storybook that would give users
+            the chance to interact with the content and keep their focus on paragraphs at a time. The tone of the prose
+            would be amplified by isolated text that pops out to the reader after every
+            click through the dynamic reader.</p>
     </article>
 </main>

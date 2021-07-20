@@ -1,12 +1,19 @@
 footer {
     position: relative;
-    margin-top: 128px;
+    margin-top: 256px;
     padding: 16px 48px;
     background-color: #333;
     color: white;
+    text-align: center;
 }
 
 footer .copyright {
     margin-bottom: 48px;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    footer .copyright {
+        font-size: 1rem; 
+    }
 }

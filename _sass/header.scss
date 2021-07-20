@@ -1,28 +1,44 @@
 header {
     position: relative;
-    padding: 16px 24px;
+    padding: 0px 24px;
+    padding-bottom: 8px;
+    height: 60px;
+    border-bottom: 2px solid #bbbbbb;
+
+    .mobile {
+        display: none;
+    }
 }
 
 .header-title {
     position: absolute;
+    top: 16px;
+    left: 24px;
+    bottom: auto;
     font-family: 'Montserrat', 'Open Sans', sans-serif;
-
     font-size: 2.5rem;
-    text-transform: uppercase;
     font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nav-container {
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.2rem;
 }
 
-.navbar {
-    margin-left: 300px;
-    margin-right: 96px;
-    padding: 0px;
-    display: flex;
+.nav-container ul {
     list-style-type: none;
+
+}
+#navbar-desktop {
+    margin-left: 315px;
+    margin-right: 96px;
+    margin-bottom: 8px;
+    padding-top: 16px;
+    padding-left: 0px;
+    display: flex;
 }
 
 .nav-item {
@@ -33,12 +49,58 @@ header {
 
 header .boxed-link {
     position: absolute;
+    top: 8px;
+    left: auto;
     right: 16px;
+    bottom: auto;
 }
 
-header hr {
+
+
+#nav-menu-btn {
+    display: none;
+    margin-top: 8px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 8px;
+    height: 48px;
+    font-size: 1rem;
+    
 }
-.hr60p { width: 60%; }
-.hr55p { width: 55%; }
+
+#navbar-mobile {
+    padding-left: 0px;
+    width: 100%;
+
+    li {
+        padding: 22px 20px;
+        font-size: 1.4rem;
+        border-bottom: 2px solid #bbb;
+    }
+    a {
+        display: block;
+    }
+}
+
+.nav-container .hidden {
+    
+}
+.nav-container .visible {
+    background-color: #eeefff;
+}
+
+@media screen and (max-width: 768px) {
+    header .mobile {
+        display: block;
+    }
+    #navbar-desktop, .desktop {
+        display: none;
+    }
+    header { padding: 0px; }
+    .header-title {
+        font-size: 2rem;
+    }
+    #nav-menu-btn {
+        display: block;
+
+    }
+}

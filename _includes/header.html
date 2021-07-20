@@ -1,15 +1,20 @@
 <header>
-    <a href="{{ site.baseurl }}">
+    <a href="{{ site.baseurl }}/" class="header-title">
         {% if page.title == "Poetry" %}
-        <h2 class="header-title">Kevillanelle</h2>
+        Kevillanelle
         {% else %}
-        <h2 class="header-title">Kevin Jang</h2>
+        Kevin Jang
         {% endif %}
     </a>
-    <a class="boxed-link" href="https://www.linkedin.com/in/kevinjjang" target="_blank"
-        rel="noopener noreferer">LinkedIn</a>
+    <button id="nav-menu-btn" onclick="displayMenu()" aria-label="Open Menu">MENU</button>
     <nav class="nav-container">
-        <ul class="navbar">
+        <ul id="navbar-desktop" class="desktop">
+            {% for item in site.data.navigation %}
+            <li class="nav-item"><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul id="navbar-mobile" class="hidden">
             {% for item in site.data.navigation %}
             <li class="nav-item"><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
             </li>
@@ -17,4 +22,6 @@
         </ul>
     </nav>
 
+    <a class="boxed-link desktop" href="https://www.linkedin.com/in/kevinjjang" target="_blank"
+        rel="noopener noreferer">LinkedIn</a>
 </header>
