@@ -2,9 +2,11 @@
   link: /portfolio
 - name: Poetry
   link: /poetry
-# - name: Blog
-#   link: /blog
 - name: Resources
   link: /resources
+
+
+# - name: Blog
+#   link: /blog
 # - name: Style Guide
 #   link: /style-guide

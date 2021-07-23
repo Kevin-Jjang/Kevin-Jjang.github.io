@@ -89,7 +89,7 @@ a:focus, a:focus-visible {
 .boxed-link {
     padding: 16px 24px;
     background-color: #000;
-    color: white;
+    color: white !important;
     text-transform: uppercase;
     text-decoration: none;
     font-style: italic;
