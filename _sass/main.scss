@@ -86,18 +86,7 @@ a:focus, a:focus-visible {
     opacity: 0.8;
 }
 
-.boxed-link {
-    padding: 16px 24px;
-    background-color: #000;
-    color: white !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-style: italic;
-}
 
-.boxed-link:focus-visible {
-    opacity: 0.5;
-}
 hr {
     border: none;
     height: 2px;

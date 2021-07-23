@@ -11,7 +11,19 @@
 
 .link-container a {
     font-size: 1.25rem;
-    // line-height: 48px;
     font-weight: bold;
     text-decoration: underline;
+}
+
+.boxed-link {
+    padding: 16px 24px;
+    background-color: #000;
+    color: white !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.boxed-link:focus-visible {
+    opacity: 0.5;
 }
