@@ -26,14 +26,18 @@ title: Other People
         <h4 id="op-overview">OVERVIEW</h4>
         <p><strong>Other People Literary Magazine</strong>, established in 2019, is known as UC San Diego's first
             undergraduate-run literary magazine. Among a large team of literary editors and designers, I am currently
-            Other
-            People's only code-based developer. Therefore, my activities cover a broad range from Web Production to
-            Digital Development to UX Design. I am constantly communicating with directors and members to accomplish all
-            of the tasks needed to maintain and enhance our creative display of UCSD students' works on our website.</p>
+            Other People's lead developer. Therefore, my activities cover a broad range from Web Production to Digital
+            Development to UX Design. I am constantly communicating with directors and other members to accomplish all
+            the tasks needed to maintain and enhance our creative display of UCSD students' works on our website.</p>
 
-        <p>My responsibilities are performed on GitHub (codebase), GitHub Pages (hosting), Jekyll (static site
-            generator), Forestry.io (CMS), Miro (UX wireframes), and Webflow (UI layouts)</p>
-
+        <p><strong>Tools</strong>: HTML/CSS/JS, GitHub, GitHub Pages (hosting), Jekyll (static site generator),
+            Forestry.io (CMS), Miro (UX wireframes), Webflow (UI layouts), Slack (communication)</p>
+        <p><strong>Contributions (June - mid-July)</strong>: Uploaded Collection No. 2 (and Collection No. 3) on the
+            website, code fixes detailed in the <a
+                href="https://github.com/Other-People-UCSD/Pink-Currents/blob/master/CHANGELOG.md">changelog</a>,
+            several ADRs in the <a
+                href="https://github.com/Other-People-UCSD/Pink-Currents/tree/master/documentation/ADRs">documentation
+                folder</a>.</p>
 
         <h4 id="op-management">INTERNAL MANAGEMENT</h4>
         <p>I create architectural design records (ADRs) for any major change to the website. These ADRs are about
@@ -41,16 +45,39 @@ title: Other People
             Therefore, I give context on the subject and describe the pros and cons of each decision option. These
             records document changes that happen in the website code and asserts responsibility onto my actions when
             making changes. ADRs are both stored in Markdown format within GitHub, as well as inside our Google Drive
-            under our website folder.</p>
+            under our website folder. (<a href="{{ site.baseurl }}/assets/pdf/06-01-21-changing-permalinks.pdf">See an
+                example of an ADR, in PDF</a>)</p>
 
-        <p>Other recording documents include a changelog within the GitHub repository for the minor updates that do not
+        <p>Other recording documents include a <a
+                href="https://github.com/Other-People-UCSD/Pink-Currents/blob/production/CHANGELOG.md">changelog</a>
+            within the GitHub repository for the minor updates that do not
             require decisions and a checklist of tasks that I need to complete by certain dates like a collection
             release.</p>
+
+        <p>Other management that has significantly improved the life of the website was code refactoring in HTML, JS,
+            and even files. Before I joined, I knew that the GitHub repository contained a <code>_site</code> folder
+            that was generated in Jekyll, but that folder was not needed when hosting on GitHub Pages. Therefore, it
+            contained a copy of every image file and roughly doubled the size of the repository. This was a bad
+            management of files because the website’s life would not last long if it was growing twice as large. I
+            explained the issue to my directors, who allowed me to remove the <code>_site</code> folder. This
+            refactoring decreased the size of the website from 281 MB to 99 MB, a <strong>reduction of 64%</strong>.
+            After I uploaded media for Collection No. 2 and 3, the <a
+                href="https://api.github.com/repos/Other-People-UCSD/Pink-Currents">GitHub repository size is 144
+                MB</a>.</p>
+
+        <p>More file issues that I am currently dealing with are writing alt text to add to all images and posts
+            throughout the website and keeping a list of these website files to identify them faster. This spreadsheet
+            shows how I keep track of files inside our Google Drive, on GitHub, and the file size that is recommended to
+            be under 2 MB to increase our GitHub hosting lifetime.</p>
+
+        <img src="{{ site.baseurl }}/assets/img/OP-image-management.jpg"
+            alt="A spreadsheet view of images used on the website. The title, illustrator, links, file size, and alt text columns are visible with colored cells to distinguish if the file is well-formed."
+            width="100%" />
         <h4 id="op-ux">UX Research & Design</h4>
         <p>Using my previous experiences with UX Design, I fixed many accessibility issues concerning screen-reader and
             keyboard support. One of the biggest issues was an inaccessible navigation menu in the header. Pressing
             enter would not open the menu because it was a link instead of a button. Furthermore, links did not have a
-            selection outline and tabbing past the link would fall into the hidden navigation elements, when it should
+            selection outline and tabbing past the link would fall into the hidden navigation elements when it should
             tab to the main content. This happened because the navigation container was positioned outside the browser
             and did not hide the links inside it.</p>
 
@@ -63,7 +90,8 @@ title: Other People
             to secure the published posts from being copied, but it was still easy to select or screenshot the
             literature and art with that line of code.
         </p>
-
+        <img src="{{ site.baseurl }}/assets/img/OP-header-layout.png"
+            alt="Wireframe for the search function, as described below." width="80%">
         <p>Other UX concerns include the search function because the codebase currently utilizes two different
             navigation menus. Landing pages contain the functional search bar directly in the menu, but posts contain a
             link to the search page instead of the search bar. The wireframe below details the difference between the
@@ -90,6 +118,15 @@ title: Other People
             generate the preview within seconds. We use Forestry because it effectively allows the non-developers to
             create posts and manage the front-matter in a nice UI. The CMS is also headless, meaning that we can switch
             to a different CMS to connect to our content, if needed.</p>
+
+        <img src="{{ site.baseurl }}/assets/img/op-forestry.jpg"
+            alt="The Forestry UI showing the front matter fields on the left and the post's HTML on the right." 
+            width="100%" />
+        
+            <p>This example of a post on Forestry shows the poem <a href="https://otherpeoplesd.com/2/little-doll">“Little
+                Doll” by Alexandra Jefson</a>. It is not in Markdown
+            format like most of the other content entries because it was designed to have the text over the illustration
+            background, hence the HTML tags to show two different displays on desktop and on mobile!</p>
         <h4 id="op-dev">New Digital Art Development</h4>
         <p>The benefit of using GitHub Pages to host our website is that it is entirely custom-coded. Therefore,
             developers can create anything without being constrained by head-based CMS! This grants us the freedom to

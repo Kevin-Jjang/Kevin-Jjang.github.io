@@ -8,7 +8,7 @@ title: Resources
     <div class="portfolio-links">
         <span><a href="{{ link.url }}">{{ link.name}}</a></span>
     </div>
-    <p class="link-description">{{ link.description }}</p>
+    <p class="link-description"><strong>{{ link.name }}</strong> {{ link.description }}</p>
     {% endfor %}
 
     {% for link in site.data.links limit: 1 offset: 3%}
