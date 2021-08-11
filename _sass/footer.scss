@@ -5,8 +5,25 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
+
+
 }
 
+footer .footer-nav {
+    display: flex;
+    justify-content: center;
+    
+    ul {
+        display: block;
+        margin: 0px;
+        padding-left: 0px;
+        list-style-type: none;
+    }
+    li {
+        padding: 8px 16px;
+        float: left;
+    }
+}
 footer .copyright {
     margin-bottom: 48px;
     text-align: center;
