@@ -33,6 +33,14 @@ title: Poetry
             issue.
         </li>
     </ul>
-
-
+    <h2>Poetry</h2>
+    <ul class="post-list">
+    {% for poem in site.categories.Poetry %}
+        <li class="post-card">
+            <a href="{{ poem.url }}"><strong>{{ poem.title }}</strong></a>
+            <p>&lsqb;{{ poem.tags | join: ', '}}&rsqb;</p>
+            <p>{{ poem.preview }}</p>
+        </li>
+    {% endfor %}
+    </ul>
 </main>

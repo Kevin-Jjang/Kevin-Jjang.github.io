@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+    let privacyPopup = document.getElementById('privacy-policy-popup');
+    privacyPopup.classList.remove('hidden');
     let hidePrivacyPolicy = window.localStorage.getItem('hidePrivacyPolicy081021');
     if(hidePrivacyPolicy === 'true' || document.getElementById('privacy-policy')) {
         closePrivacyPopup();

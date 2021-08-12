@@ -15,6 +15,50 @@
     font-size: 1.3rem;
 }
 
+.post-list {
+	list-style-type: none;
+	padding-left: 0px;
+}
+.post-card {
+	padding: 16px 10px;
+	border-top: 2.5px solid #4c4cce;
+	border-bottom: 1.5px solid #4c4cce;
+	border-collapse: collapse;
+	a {
+		font-size: 1.1rem;
+	}
+}
+.post-card:first-child {
+	border-top-width: 3px;
+}
+.post-card:last-child {
+	border-bottom-width: 3px;
+}
+main .poetry {
+	p {
+		margin: 0;
+	}
+	.copyright {
+		color: #4c4cce;
+	}
+	.poetry-footer {
+		p {
+		margin: revert;
+		}
+	}
+}
+.poetry-header {
+	h1, h2 {
+		font-size: 1rem;
+	}
+	h1 {
+		margin-top: 32px;
+		margin-bottom: 32px;
+		padding-left: 40px;
+		text-align: left;
+	}
+}
+
 /* Slideshow container */
 .featured-container {
 	position: relative;
