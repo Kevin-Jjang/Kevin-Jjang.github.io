@@ -66,6 +66,17 @@
     }
 }
 
+.sitemap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    ul {
+        margin: 16px;
+        padding: 0px;
+        list-style-type: none;
+    }
+}
+
 .portfolio {
     margin-left: auto;
     margin-right: auto;
@@ -158,6 +169,7 @@
             padding-right: 0px;
         }
     }
+    .sitemap-container { justify-content: normal; }
 
     .skillset-container .skillset-grid {
         grid-template-rows: 1fr 1fr 1fr;
@@ -165,6 +177,7 @@
         column-gap: 8px;
         row-gap: 16px;
     }
+    
     .portfolio, .portfolio-objective { width: 100%; }
     .portfolio .portfolio-item {
         padding-top: 0px;

@@ -109,6 +109,10 @@ table th, table td { padding: 12px; }
 // table tr:hover { background-color: #ddd; }
 table { border-collapse: collapse; }
 
+summary::marker { font-size: 2rem; }
+summary h2 { display: inline; }
+
+
 .font-light {
     opacity: 0.5;
 }
@@ -133,7 +137,10 @@ table { border-collapse: collapse; }
     transition: all 0.7s cubic-bezier(0.18, 0.9, 0.65, 1);
 }
 
-
+#contact-form {
+    width: 100%;
+    max-width: 960px;
+}
 @media screen and (max-width: 768px ) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.7rem; }

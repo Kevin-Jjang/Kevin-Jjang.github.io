@@ -1,0 +1,33 @@
+---
+layout: default
+title: Sitemap
+mapexclude: true
+---
+<div class="sitemap-container">
+    <ul>
+        <h2 id="landings">Main</h2>
+        {% for page in site.pages %}
+        {% unless page.url contains "assets" or page.url contains "projects" or page.mapexclude %}
+        {% if page.title %}
+        <li><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}
+        {% endunless %}
+        {% endfor %}
+    </ul>
+    <ul>
+        <h2 id="projects">Projects</h2>
+        {% for page in site.pages %}
+        {% if page.url contains "projects" %}
+        <li><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    <ul>
+        <h2 id="poetry">Poetry</h2>
+        {% assign poems = site.categories.Poetry | sort: "title" %}
+        {% for poem in poems %}
+        <li><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ poem.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+

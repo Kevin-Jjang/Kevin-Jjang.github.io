@@ -1,6 +1,6 @@
 ---
 layout: poetry
-title: "Untitled (Villanelle #2)"
+title: "Do not go silent"
 tags: ["Fiction", "Villanelle"]
 categories: ["Poetry"]
 preview: "Do not go silent into that quiet light..."

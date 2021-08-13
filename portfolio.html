@@ -40,37 +40,48 @@ title: Portfolio
     </div>
 
     <article class="portfolio center uppercase">
-        <h2>Projects</h2>
-        <p class="font-light">All references and specific implementations are publicly accessible, so there are no
-            privacy violations regarding these project insights.</p>
-        <p>(Click image to view)</p>
+        <details open>
+            <summary><h2>Projects</h2></summary>
+            <p class="font-light">All references and specific implementations are publicly accessible, so there are no
+                privacy violations regarding these project insights.</p>
+            <p>(Click image to view)</p>
+    
+            <div class="portfolio-item">
+                <a href="{{ site.baseurl}}/projects/other-people"><img src="{{ site.baseurl }}/assets/img/OP-Logo.svg"
+                        alt="Other People Logo" style="height: 240px" /></a>
+                <h3>Web Producer & UX Design</h3>
+                <h2>Other People Literary Magazine</h2>
+                <h3 class="font-light date">June 2021 - Present</h3>
+            </div>
+    
+            <div class="portfolio-item">
+                <a href="{{ site.baseurl }}/projects/alchemy">
+                    <img src="{{ site.baseurl }}/assets/img/AlchemyLogoHighRes.jpg" alt="Alchemy Logo"
+                        style="height: 150px" />
+                </a>
+                <h3>Web Producer & Literary Editor</h3>
+                <h2>Alchemy: A Journal of Translation</h2>
+                <h3 class="font-light date">May 2020 - Present</h3>
+            </div>
+    
+            <div class="portfolio-item">
+                <a href="{{ site.baseurl}}/projects/potato-timer">
+                    <img src="{{ site.baseurl }}/assets/img/potato-timer.png" alt="Potato Timer Thumbnail"
+                        width="100%" />
+                </a>
+                <h3>UX Design</h3>
+                <h2 style="font-size: 1.3rem;">Software Engineering Course &mdash; Pomodoro Timer</h2>
+                <h3 class="font-light date">January 2021 - April 2021</h3>
+            </div>
+        </details>
 
-        <div class="portfolio-item">
-            <a href="{{ site.baseurl}}/projects/other-people"><img src="{{ site.baseurl }}/assets/img/OP-Logo.svg"
-                    alt="Other People Logo" style="height: 240px" /></a>
-            <h3>Web Producer & UX Design</h3>
-            <h2>Other People Literary Magazine</h2>
-            <h3 class="font-light date">June 2021 - Present</h3>
-        </div>
 
-        <div class="portfolio-item">
-            <a href="{{ site.baseurl }}/projects/alchemy">
-                <img src="{{ site.baseurl }}/assets/img/AlchemyLogoHighRes.jpg" alt="Alchemy Logo"
-                    style="height: 150px" />
-            </a>
-            <h3>Web Producer & Literary Editor</h3>
-            <h2>Alchemy: A Journal of Translation</h2>
-            <h3 class="font-light date">May 2020 - Present</h3>
-        </div>
+        <details open>
+            <summary><h2>CS Articles</h2></summary>
+        </details>
 
-        <div class="portfolio-item">
-            <a href="{{ site.baseurl}}/projects/potato-timer">
-                <img src="{{ site.baseurl }}/assets/img/potato-timer.png" alt="Potato Timer Thumbnail"
-                    width="100%" />
-            </a>
-            <h3>UX Design</h3>
-            <h2 style="font-size: 1.3rem;">Software Engineering Course &mdash; Pomodoro Timer</h2>
-            <h3 class="font-light date">January 2021 - April 2021</h3>
-        </div>
+        <details open>
+            <summary><h2>Education</h2></summary>
+        </details>
     </article>
 </main>
