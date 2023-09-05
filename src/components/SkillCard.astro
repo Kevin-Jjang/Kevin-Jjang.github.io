@@ -1,0 +1,26 @@
+---
+export interface Props {
+	category: string;
+	skills: string;
+    // description: string;
+}
+
+const {category, skills} = Astro.props;
+---
+<div class="skill-item">
+    <p class="skill-category">{category}</p> 
+    <p class="skills">{skills}</p>
+</div>
+
+<style>
+    .skill-item {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 16px;
+        border-bottom: 1px grey solid;
+    }
+
+    .skill-category {
+        font-weight: bold;
+    }
+</style>

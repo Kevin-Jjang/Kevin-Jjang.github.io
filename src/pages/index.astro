@@ -1,0 +1,115 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+import Card from "../components/Card.astro";
+import SkillCard from "../components/SkillCard.astro";
+
+const interests = ["Media/Publication"];
+---
+
+<LandingLayout title={"Kevin Jang"}>
+	<main>
+		<h1 class="text-gradient">Kevin Jang</h1>
+		<p class="heading2 text-gradient bold">Frontend Web Developer</p>
+
+		<p>
+			I recently graduated from the University of California, San Diego
+			with a <strong>Bachelor's degree in Computer Science</strong> and a <strong
+			>
+				minor in Literature/Writing
+			</strong>. Currently, I have been the lead frontend developer of
+			Other People Magazine for over two years working on new features to
+			display and promote published works over the internet. I am
+			primarily interested in developing products that expand what
+			creators can do to enhance their creativity, accessibility, or
+			marketability in innovative ways.
+		</p>
+
+		<h2>Skillset</h2>
+		<div class="skillset">
+			<SkillCard category="Languages" skills="HTML, CSS, JavaScript, Python" />
+			<SkillCard category="Libraries" skills="ReactJS, Node.js" />
+			<SkillCard category="Frameworks" skills="Next.js, Astro, Jekyll" />
+			<SkillCard
+				category="Accessibility"
+				skills="NVDA (screen reader), DevTools, Google Lighthouse audits"
+			/>
+			<SkillCard
+				category="Documentation"
+				skills="Docusaurus, Technical & Creative Writing"
+			/>
+			<SkillCard
+				category="Content Management Systems"
+				skills="TinaCMS, Forestry.io, WordPress, Wix"
+			/>
+			<SkillCard
+			category="Testing"
+			skills="N/A, Currently learning JS unit testing"
+		/>
+		</div>
+
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+		</ul>
+	</main>
+</LandingLayout>
+
+<style>
+	main {
+		margin-left: 350px;
+		margin-right: auto;
+		padding: 1.5rem;
+		width: auto;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
