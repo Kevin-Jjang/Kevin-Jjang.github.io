@@ -1,8 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-import SideNav from '../components/SideNav.astro';
+import HeaderDesktop from '../components/HeaderDesktop.astro';
+import HeaderMobile from '../components/HeaderMobile.astro';
+
+function useEffect(arg0: () => void) {
+throw new Error("Function not implemented.");
+}
 
 export interface Props {
 	title: string;
@@ -22,24 +25,28 @@ const { title } = Astro.props;
 		<title>{title} - Kevin Jang</title>
 	</head>
 	<body>
-		<Header />
-		<!-- <div class="main-container"> -->
-			<SideNav />
-			<slot />
-		<!-- </div> -->
-		<!-- <Footer /> -->
+		<HeaderDesktop />
+		<HeaderMobile />
+		<slot />
 	</body>
 </html>
 
+<script>
+	
+</script>
 <style>
-	.main-container {
-		display: grid;
-		grid-template-columns: 1fr 4fr;
-	}
 	main {
 		margin-left: 350px;
 		margin-right: auto;
-		padding: 1.5rem;
 		width: auto;
 	}
+	html {
+		background: radial-gradient(#7d27ff, #36087b);
+		color: #fff;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+	}
+
 </style>

@@ -1,0 +1,123 @@
+---
+import Socials from "./Socials.astro";
+
+---
+
+<header>
+  <div class="kevinjang">
+    <div class="portrait-container">
+      <img alt="Kevin Jang" src="/portrait.webp" />
+    </div>
+
+    <div class="name">
+      <h1 class="text-gradient">KEVIN JANG</h1>
+      <p class="heading2 text-gradient bold">FRONTEND ENGINEER</p>
+      <Socials class="mobile-socials"/>
+    </div>
+  </div>
+
+  <nav class="nav-container">
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Portfolio</a></li>
+      <ul>
+        <li>Recommendation System</li>
+      </ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#literature">Literature</a></li>
+    </ul>
+  </nav>
+
+</header>
+<style>
+  @media screen and (min-width: 768px) {
+    header {
+      display: none;
+    }
+  }
+
+  header {
+    margin: 32px 16px;
+  }
+
+  .kevinjang {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .portrait-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+
+  .portrait-container img {
+    border-radius: 50%;
+  }
+
+  h1 {
+    margin: 0px;
+  }
+
+  .heading2 {
+    margin: 0px;
+    font-size: 1.2rem;
+  }
+
+  .mobile-socials {
+    scale: 0.8;
+  }
+
+  .navlinks {
+    padding-left: 0px;
+    list-style-type: "// ";
+    list-style-position: inside;
+  }
+
+  .navlinks > li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+
+  .navlinks > li > a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+  .socials a {
+    text-decoration: none;
+  }
+
+  .svgWhite {
+    fill: white;
+  }
+
+  .copyright {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* .sidebar-overlay {
+            background-color: rgba(200, 200, 200, 0.508);
+        }
+
+        .sidebar {
+            width: 100%;
+            display: none;
+        } */
+
+    #sidebar-outside {
+      display: block;
+    }
+  }
+</style>

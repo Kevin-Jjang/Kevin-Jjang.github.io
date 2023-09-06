@@ -1,0 +1,107 @@
+---
+import Socials from "./Socials.astro";
+const sidebarWidth = "350px";
+---
+
+<header class="sidebar">
+    <!-- profile pictures -->
+    <div class="portrait-container">
+        <img alt="Kevin Jang" src="/portrait.webp" />
+    </div>
+
+    <h1 class="text-gradient">Kevin Jang</h1>
+    <p class="heading2 text-gradient bold">Frontend Engineer</p>
+
+    <nav class="nav-container">
+        <ul class="navlinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <ul>
+                <li>Recommendation System</li>
+            </ul>
+            <li><a href="#school-projects">Projects</a></li>
+            <li><a href="#literature">Literature</a></li>
+        </ul>
+    </nav>
+
+    <Socials />
+
+    <p>Built using the Astro framework, by me!</p>
+    <p class="copyright">Kevin Jang © 2023</p>
+</header>
+
+<style define:vars={{ sidebarWidth }}>
+    
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        box-sizing: border-box;
+        padding-top: 64px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 64px;
+        width: var(--sidebarWidth);
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .portrait-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+    }
+
+    .portrait-container img {
+        border-radius: 50%;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+    .heading2 {
+        margin: 0px;
+        font-size: 1.2rem;
+    }
+
+    nav {
+    }
+    .navlinks {
+        padding-left: 0px;
+        list-style-type: "// ";
+        list-style-position: inside;
+    }
+
+    .navlinks > li {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+    }
+
+    .navlinks > li > a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .copyright {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        header {
+            display: none;
+        }
+    }
+</style>

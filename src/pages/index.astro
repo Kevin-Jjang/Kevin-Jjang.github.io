@@ -2,68 +2,132 @@
 import LandingLayout from "../layouts/LandingLayout.astro";
 import Card from "../components/Card.astro";
 import SkillCard from "../components/SkillCard.astro";
-
-const interests = ["Media/Publication"];
+import PortfolioCard from "../components/PortfolioCard.astro";
 ---
 
 <LandingLayout title={"Kevin Jang"}>
 	<main>
-		<h1 class="text-gradient">Kevin Jang</h1>
-		<p class="heading2 text-gradient bold">Frontend Web Developer</p>
-
-		<p>
-			I recently graduated from the University of California, San Diego
-			with a <strong>Bachelor's degree in Computer Science</strong> and a <strong
-			>
-				minor in Literature/Writing
-			</strong>. Currently, I have been the lead frontend developer of
-			Other People Magazine for over two years working on new features to
-			display and promote published works over the internet. I am
-			primarily interested in developing products that expand what
-			creators can do to enhance their creativity, accessibility, or
+		<p id="about">
+			I recently graduated from the University of California, San Diego with a <strong
+				>Bachelor's degree in Computer Science</strong
+			> and a <strong> minor in Literature/Writing</strong>. Currently, I have
+			been the lead frontend developer of Other People Magazine for over two
+			years working on new features to display and promote published works over
+			the internet. I am primarily interested in developing products that expand
+			what creators can do to enhance their creativity, accessibility, or
 			marketability in innovative ways.
 		</p>
 
-		<h2>Skillset</h2>
-		<div class="skillset">
-			<SkillCard category="Languages" skills="HTML, CSS, JavaScript, Python" />
-			<SkillCard category="Libraries" skills="ReactJS, Node.js" />
-			<SkillCard category="Frameworks" skills="Next.js, Astro, Jekyll" />
-			<SkillCard
-				category="Accessibility"
-				skills="NVDA (screen reader), DevTools, Google Lighthouse audits"
-			/>
-			<SkillCard
-				category="Documentation"
-				skills="Docusaurus, Technical & Creative Writing"
-			/>
-			<SkillCard
-				category="Content Management Systems"
-				skills="TinaCMS, Forestry.io, WordPress, Wix"
-			/>
-			<SkillCard
-			category="Testing"
-			skills="N/A, Currently learning JS unit testing"
-		/>
-		</div>
+		<a href="kevin-jang-resume.pdf" id="resume-download" class="heading2">
+			Download Resume
+			<svg
+				width="32px"
+				height="32px"
+				viewBox="0 -2 24 24"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M12.5535 16.5061C12.4114 16.6615 12.2106 16.75 12 16.75C11.7894 16.75 11.5886 16.6615 11.4465 16.5061L7.44648 12.1311C7.16698 11.8254 7.18822 11.351 7.49392 11.0715C7.79963 10.792 8.27402 10.8132 8.55352 11.1189L11.25 14.0682V3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V14.0682L15.4465 11.1189C15.726 10.8132 16.2004 10.792 16.5061 11.0715C16.8118 11.351 16.833 11.8254 16.5535 12.1311L12.5535 16.5061Z"
+					fill="#ffffff"></path>
+				<path
+					d="M3.75 15C3.75 14.5858 3.41422 14.25 3 14.25C2.58579 14.25 2.25 14.5858 2.25 15V15.0549C2.24998 16.4225 2.24996 17.5248 2.36652 18.3918C2.48754 19.2919 2.74643 20.0497 3.34835 20.6516C3.95027 21.2536 4.70814 21.5125 5.60825 21.6335C6.47522 21.75 7.57754 21.75 8.94513 21.75H15.0549C16.4225 21.75 17.5248 21.75 18.3918 21.6335C19.2919 21.5125 20.0497 21.2536 20.6517 20.6516C21.2536 20.0497 21.5125 19.2919 21.6335 18.3918C21.75 17.5248 21.75 16.4225 21.75 15.0549V15C21.75 14.5858 21.4142 14.25 21 14.25C20.5858 14.25 20.25 14.5858 20.25 15C20.25 16.4354 20.2484 17.4365 20.1469 18.1919C20.0482 18.9257 19.8678 19.3142 19.591 19.591C19.3142 19.8678 18.9257 20.0482 18.1919 20.1469C17.4365 20.2484 16.4354 20.25 15 20.25H9C7.56459 20.25 6.56347 20.2484 5.80812 20.1469C5.07435 20.0482 4.68577 19.8678 4.40901 19.591C4.13225 19.3142 3.9518 18.9257 3.85315 18.1919C3.75159 17.4365 3.75 16.4354 3.75 15Z"
+					fill="#ffffff"></path>
+			</svg>
+		</a>
 
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+		<h2 id="portfolio">Experience</h2>
+		
+
+		<ul>
+			<PortfolioCard
+				href="https://www.otherpeoplesd.com"
+				title="Other People Magazine"
+				date="JUN 2021 — PRESENT"
+				position="Lead Frontend Developer"
+				body="Maintained, developed, and enhanced the Other People Literary Arts website to improve user experience and the ability of our published creatives to have their works read. Please read about the most recent projects and products I developed at Other People Magazine below! (All information below is public)"
+				tags={["Project Management"]}
+				subProject={true}
 			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app/docs/calla-lily/lighthouse"
+				title="Google Lighthouse CI Automated Audits"
+				date="AUG 2023"
+				body="Description"
+				tags={["CI/CD", "GitHub Actions"]}
+				subProject={true}
 			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app/docs/recommendation-system"
+				title="Literary Arts Recommendation System"
+				date="AUG 2023"
+				body="I developed the recommendation system for Other People by combining methods to extract features from textual content and a neural network to discern features from artwork. I built and used the Other People API endpoints to extract data from the literary works used in the system. After researching different methods and strategies for analyzing the similarity of two works irrespective of end user information, the recommendation model adequately returns a diverse and novel set of recommendations for each literary or artistic work."
+				tags={["Python", "Lighthouse"]}
+				subProject={true}
+			/>
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app"
+				title="Documentation Website"
+				date="JUN 2023"
+				body="In order to onboard new developers to keep Other People's many products still operable, I developed a website in Docusaurus to document major design decisions and changes that have happened throughout Other People's history. This documentation helped significantly with onboarding a new developer by breaking down the steps and showing visual architectural diagrams on how the integrations interact with each other."
+				tags={["Docusaurus"]}
+				subProject={true}
+			/>
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app/docs/projects/cyoa-workflow"
+				title="Choose Your Own Adventure Product"
+				date="APR — JUN 2023"
+				body="I worked with a client to publish their story by creating a native choose-your-own-adventure (CYOA) program with additional features for accessibility and user-centric design. I was able to finish a minimum viable product (MVP) well before their work was finalized. I developed a python program that converted the templated tab-separated values (TSV) file into JSON to be read through the JavaScript program. After creating this MVP, we worked together to adjust the product designs and debug issues that were found when converting the story to input data. We finalized everything a few days before the deadline and established good relations between them and our organization."
+				tags={["Python", "JavaScript", "Clients"]}
+				subProject={true}
+			/>
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app/docs/calla-lily/calla-lily-release"
+				title="Rebuilt Website in React"
+				date="APR 2023"
+				body="I rebuilt the publishing website because the former content management system, Forestry.io was deprecated at the end of March. Researching many CMS options, we chose to replace it with TinaCMS. The new CMS does not function properly in the former Jekyll and vanilla JS codebase, so I rebuilt the whole website while learning the Next.js framework in a month."
+				tags={["Next.js", "ReactJS", "Content Management Systems", "MDX"]}
+				subProject={true}
+			/>
+
+			<PortfolioCard
+				href="https://docs-git-main-other-people.vercel.app/docs/projects/typewriter-workflow"
+				title="Typewriter Product"
+				date="MAR 2023"
+				body="A typewriter program automatically displays characters or words onto the webpage. I worked with a client to make a native typewriter program on our website so as to not include an external dependency to the website. After rebuilding the website, I reworked the program to execute over a list of inputs instead of calling the same methods manually. This makes it modular and easier to input for the program."
+				tags={["JavaScript", "Clients"]}
+				subProject={true}
 			/>
 		</ul>
+
+		<h2 id="school-projects">Relevant School Projects</h2>
+		<ul>
+			<PortfolioCard
+				href=""
+				title="Authentication and Analytics Web Server"
+				date="APR 2021 - JUN 2021"
+				position="Frontend Developer"
+				body="In a group of three developers, we worked on a university project to learn how to configure an apache server. The significant takeaways from this project were learning about common gateway interfaces to output webpages in Python, Go, and C. We also built a RESTful using PHP functions to construct an authentication frontend and connected the webapp to a third-party logging system to analyze insights about our webpages."
+				tags={["Apache", "Python", "PHP", "MySQL", "Cookies"]}
+			/>
+
+			<PortfolioCard
+				href=""
+				title="Pomodoro Timer"
+				date="JAN 2023 - MAR 2021"
+				position="UI & Frontend"
+				body="In a group of eight developers, I was assigned the role of UI/UX and later worked on the frontend of the web app halfway through the project. We collectively agreed to do a fun theme to encapsulate all of this while considering issues such as how distractible the interface could be. I focused on multilingual support and accessibility as the designer so that the app could be used by a wider audience of screen reader or non-English users. Then, I worked on the task functionality to let users jot down tasks they want to complete."
+				tags={["Accessibility", "Screen Readers", "Multilingual Support"]}
+			/>
+		</ul>
+
+		<h2 id="literature">Literature</h2>
+		
 	</main>
 </LandingLayout>
 
@@ -71,45 +135,43 @@ const interests = ["Media/Publication"];
 	main {
 		margin-left: 350px;
 		margin-right: auto;
-		padding: 1.5rem;
+		padding-top: 0px;
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-bottom: 32px;
 		width: auto;
 	}
+
+	#about {
+		margin-top: 0px;
+	}
+
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
 	}
 
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	ul {
+		padding-left: 0;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+
+	#resume-download {
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
+
+	@media screen and (max-width: 768px) {
+		main {
+			margin-left: 0px;
+		}
 	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	@media screen and (min-width: 768px) {
+		#about {
+			padding-top: 128px;
+		}
 	}
 </style>

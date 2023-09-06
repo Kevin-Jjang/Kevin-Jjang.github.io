@@ -1,0 +1,130 @@
+---
+export interface Props {
+  date: string;
+  title: string;
+  position?: string;
+  body: string;
+  href: string;
+  tags?: Array<string>;
+  subProject?: boolean;
+}
+
+const { href, title, date, position, body, tags, subProject } = Astro.props;
+---
+
+<li class="link-card card">
+  <div class="dateBox">
+    {date}
+    {subProject && <div class="subProject" />}
+  </div>
+  <a href={href} class="content">
+    <h3 class="title">
+      {title}
+    </h3>
+
+    {position && <h4 class="position">{position}</h4>}
+
+    <p class="summary">
+      {body}
+    </p>
+
+    {
+      tags && (
+        <ul class="tag-list">
+          {tags?.map((item) => {
+            return <li class="tag">{item}</li>;
+          })}
+        </ul>
+      )
+    }
+  </a>
+</li>
+<style>
+  .link-card {
+    list-style-type: none;
+    text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    column-gap: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: white;
+  }
+
+
+
+  .dateBox {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subProject {
+    flex-grow: 1;
+    margin-right: 35px;
+    border-right: 3px solid #fff;
+  }
+
+  .content {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+  }
+
+  .content:hover {
+    transition: border-color 0.5s ease-in-out;
+    border-color: white;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .position {
+    margin: 0;
+  }
+
+  .summary {
+    text-transform: initial;
+  }
+
+  .tag-list {
+    padding-left: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .tag {
+    width: fit-content;
+    padding: 6px;
+    border-radius: 25px;
+    background: rgb(0, 212, 255, 0.5);
+    background: -moz-linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    background: -webkit-linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    background: linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#df99f5",endColorstr="#00d4ff",GradientType=1);
+    font-size: 0.8rem;
+  }
+</style>
