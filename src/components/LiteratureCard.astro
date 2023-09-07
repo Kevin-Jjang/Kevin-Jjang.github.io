@@ -1,0 +1,146 @@
+---
+export interface Props {
+  date: string;
+  title: string;
+  publisher?: string;
+  body?: string;
+  href?: string;
+  genre: string;
+  tags?: Array<string>;
+}
+
+const { href, title, publisher, date, genre, body, tags } = Astro.props;
+const isExternalLink = href?.includes('http') ? '_blank' : '';
+---
+
+<li class="link-card card">
+  <div class="date">
+    {date}
+  </div>
+  <a href={href} class="content" target={isExternalLink}>
+    <div class="heading-container">
+      <div>
+        <h3 class="title">
+          {title}
+        </h3>
+        {publisher && <h4 class="publisher">{publisher} </h4>}
+      </div>
+
+      {href &&
+            <svg id="arrow" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      }
+
+    </div>
+
+    <p class="genre">{genre}</p>
+
+    {body && <p class="summary">{body}</p>}
+    
+    {
+      tags && (
+        <ul class="tag-list">
+          {tags?.map((item) => {
+            return <li class="tag">{item}</li>;
+          })}
+        </ul>
+      )
+    }
+  </a>
+</li>
+
+<style>
+  .link-card {
+    list-style-type: none;
+    text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    column-gap: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: white;
+  }
+
+  .date {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: block;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+    padding: 0px 4px 4px 4px;
+  }
+
+  .heading-container {
+    display: flex;
+    gap: 4px
+  }
+
+  #arrow {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+  }
+
+  .content:hover #arrow {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .title,
+  .publisher,
+  .genre {
+    margin: 0;
+  }
+
+  .title {
+    font-style: italic;
+  }
+  .summary {
+    text-transform: initial;
+  }
+
+  .tag-list {
+    padding-left: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .tag {
+    width: fit-content;
+    padding: 6px;
+    border-radius: 25px;
+    background: rgb(0, 212, 255, 0.5);
+    background: -moz-linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    background: -webkit-linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    background: linear-gradient(
+      135deg,
+      rgba(223, 153, 245, 0.5) 0%,
+      rgba(0, 212, 255, 0.5) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#df99f5",endColorstr="#00d4ff",GradientType=1);
+    font-size: 0.8rem;
+  }
+</style>

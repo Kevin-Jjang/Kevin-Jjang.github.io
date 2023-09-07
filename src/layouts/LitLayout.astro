@@ -1,0 +1,124 @@
+---
+import "../styles/global.css";
+import HeaderDesktop from "../components/HeaderDesktop.astro";
+import HeaderMobile from "../components/HeaderMobile.astro";
+
+const { frontmatter } = Astro.props;
+
+const options: Intl.DateTimeFormatOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const date = new Date(frontmatter.date).toLocaleDateString("en-US", options)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title} - Kevin Jang</title>
+	</head>
+	<body>
+		<HeaderDesktop />
+		<HeaderMobile />
+		<main>
+			<h1>{frontmatter.title}</h1>
+			<p>{date}</p>
+			{
+				frontmatter.tags && (
+					<ul class="tag-list">
+						{frontmatter.tags?.map((item: string) => {
+							return <li class="tag">{item}</li>;
+						})}
+					</ul>
+				)
+			}
+			<slot />
+		</main>
+		<!-- <Footer /> -->
+	</body>
+</html>
+<script>
+	window.addEventListener("mousemove", (event) => {
+		let thisX = event.clientX;
+		let thisY = event.clientY;
+		const body = document.querySelector('body');
+		body?.style.setProperty("--mouse-x", thisX + 'px');
+		body?.style.setProperty("--mouse-y", thisY + 'px');
+	});
+</script>
+<style>
+	main {
+		padding: 64px;
+		margin-right: auto;
+		width: auto;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0;
+		background: #36087b;
+		color: #fff;
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		top: var(--mouse-y);
+		left: var(--mouse-x);
+		--diameter: 0;
+		height: var(--diameter);
+		width: var(--diameter);
+		background: transparent;
+		background: radial-gradient(circle closest-side, #7d27ff40, transparent);
+		transform: translate(-50%, -50%);
+		z-index: -1;
+
+	}
+	body:hover::before {
+		--diameter: 400px;
+	}
+
+	.tag-list {
+		padding-left: 0px;
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+	}
+
+	.tag {
+		width: fit-content;
+		padding: 6px;
+		border-radius: 25px;
+		background: rgb(0, 212, 255, 0.5);
+		background: -moz-linear-gradient(
+			135deg,
+			rgba(223, 153, 245, 0.5) 0%,
+			rgba(0, 212, 255, 0.5) 100%
+		);
+		background: -webkit-linear-gradient(
+			135deg,
+			rgba(223, 153, 245, 0.5) 0%,
+			rgba(0, 212, 255, 0.5) 100%
+		);
+		background: linear-gradient(
+			135deg,
+			rgba(223, 153, 245, 0.5) 0%,
+			rgba(0, 212, 255, 0.5) 100%
+		);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#df99f5",endColorstr="#00d4ff",GradientType=1);
+		font-size: 0.8rem;
+	}
+</style>
