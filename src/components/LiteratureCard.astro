@@ -2,22 +2,20 @@
 export interface Props {
   date: string;
   title: string;
-  position?: string;
-  body: string;
+  publisher?: string;
+  body?: string;
   href?: string;
+  genre: string;
   tags?: Array<string>;
-  subProject?: boolean;
 }
 
-const { href, title, date, position, body, tags, subProject } = Astro.props;
+const { href, title, publisher, date, genre, body, tags } = Astro.props;
 const isExternalLink = href?.includes('http') ? '_blank' : '';
-
 ---
 
 <li class="link-card card">
-  <div class="dateBox">
+  <div class="date">
     {date}
-    {subProject && <div class="subProject" />}
   </div>
   <a href={href} class="content" target={isExternalLink}>
     <div class="heading-container">
@@ -25,34 +23,21 @@ const isExternalLink = href?.includes('http') ? '_blank' : '';
         <h3 class="title">
           {title}
         </h3>
-        {position && <h4 class="position">{position}</h4>}
+        {publisher && <h4 class="publisher">{publisher} </h4>}
       </div>
 
-      {
-        href && (
-          <svg
-            id="arrow"
-            width="40px"
-            height="40px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 17L17 7M17 7H8M17 7V16"
-              stroke="#ffffff"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        )
+      {href &&
+            <svg id="arrow" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       }
+
     </div>
 
-    <p class="summary">
-      {body}
-    </p>
+    <p class="genre">{genre}</p>
+
+    {body && <p class="summary">{body}</p>}
+    
     {
       tags && (
         <ul class="tag-list">
@@ -64,6 +49,7 @@ const isExternalLink = href?.includes('http') ? '_blank' : '';
     }
   </a>
 </li>
+
 <style>
   .link-card {
     list-style-type: none;
@@ -82,20 +68,13 @@ const isExternalLink = href?.includes('http') ? '_blank' : '';
     color: white;
   }
 
-  .dateBox {
+  .date {
     text-align: right;
     display: flex;
     flex-direction: column;
   }
 
-  .subProject {
-    flex-grow: 1;
-    margin-right: 35px;
-    border-right: 3px solid #fff;
-  }
-
   .content {
-    position: relative;
     display: block;
     text-decoration: none;
     color: white;
@@ -105,12 +84,13 @@ const isExternalLink = href?.includes('http') ? '_blank' : '';
 
   .heading-container {
     display: flex;
-    gap: 4px;
+    gap: 4px
   }
 
   #arrow {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+
   }
 
   .content:hover #arrow {
@@ -119,10 +99,14 @@ const isExternalLink = href?.includes('http') ? '_blank' : '';
   }
 
   .title,
-  .position {
+  .publisher,
+  .genre {
     margin: 0;
   }
 
+  .title {
+    font-style: italic;
+  }
   .summary {
     text-transform: initial;
   }

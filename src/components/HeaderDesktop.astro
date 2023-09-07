@@ -4,104 +4,164 @@ const sidebarWidth = "350px";
 ---
 
 <header class="sidebar">
-    <!-- profile pictures -->
-    <div class="portrait-container">
-        <img alt="Kevin Jang" src="/portrait.webp" />
-    </div>
+  <!-- profile pictures -->
+  <div class="portrait-container">
+    <img alt="Kevin Jang" src="/portrait.webp" />
+  </div>
 
-    <h1 class="text-gradient">Kevin Jang</h1>
-    <p class="heading2 text-gradient bold">Frontend Engineer</p>
+  <h1 class="text-gradient">Kevin Jang</h1>
+  <p class="heading2 text-gradient bold">Frontend Engineer</p>
 
-    <nav class="nav-container">
-        <ul class="navlinks">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <ul>
-                <li>Recommendation System</li>
-            </ul>
-            <li><a href="#school-projects">Projects</a></li>
-            <li><a href="#literature">Literature</a></li>
-        </ul>
-    </nav>
+  <nav class="nav-container">
+    <ul class="navlinks">
+      <li id="nav-about"><a href="/#about">About</a></li>
+      <!-- <li id="nav-skills"><a href="#skills">Skills</a></li> -->
+      <li id="nav-portfolio"><a href="/#portfolio">Portfolio</a></li>
+      <li id="nav-projects"><a href="/#projects">Projects</a></li>
+      <li id="nav-literature"><a href="/#literature">Literature</a></li>
+    </ul>
+  </nav>
 
-    <Socials />
+  <Socials class="desktop-socials"/>
 
-    <p>Built using the Astro framework, by me!</p>
-    <p class="copyright">Kevin Jang © 2023</p>
+  <p class="copyright">Built using the Astro framework, by me!</p>
+  <p class="copyright">Kevin Jang © 2023</p>
 </header>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const about = document.getElementById("about");
+    const portfolio = document.getElementById("portfolio");
+    const projects = document.getElementById("projects");
+    const literature = document.getElementById("literature");
+
+    const about_top = about ? about?.offsetTop - 200 : 0;
+    const portfolio_top = portfolio ? portfolio?.offsetTop - 200 : 0;
+    const projects_top = projects ? projects?.offsetTop - 300 : 0;
+    const literature_top = literature ? literature?.offsetTop - 200 : 0;
+
+    let lastIndex = -1;
+
+    window.addEventListener("scroll", (e) => {
+      const thisY = window.scrollY;
+      let newIdx = -1;
+
+      if (about_top <= thisY && thisY < portfolio_top) {
+        newIdx = 0;
+      } else if (portfolio_top <= thisY && thisY < projects_top) {
+        newIdx = 1;
+      } else if (projects_top <= thisY && thisY < literature_top) {
+        newIdx = 2;
+      } else if (literature_top <= thisY) {
+        newIdx = 3;
+      }
+
+      if (lastIndex == newIdx) {
+        return;
+      }
+
+      const navLinks = document.querySelectorAll(".navlinks>li");
+      navLinks[lastIndex]?.classList.remove("nav-active");
+      navLinks[newIdx]?.classList.add("nav-active");
+      lastIndex = newIdx;
+    });
+  });
+</script>
 <style define:vars={{ sidebarWidth }}>
-    
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding-top: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    width: var(--sidebarWidth);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .portrait-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+
+  .portrait-container img {
+    border-radius: 50%;
+  }
+
+  h1 {
+    margin: 0px;
+  }
+
+  .heading2 {
+    margin: 0px;
+    font-size: 1.2rem;
+  }
+
+  nav {
+    flex-grow: 1;
+    margin-top: 16px;
+  }
+
+  .navlinks {
+    position: relative;
+    padding-left: 0px;
+    list-style-type: none;
+  }
+
+  .navlinks > li::before {
+    content: "// ";
+    position: absolute;
+    left: -20px;
+  }
+
+  .navlinks > li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+
+  .navlinks > .nav-active::before {
+    content: "";
+  }
+
+  .navlinks > .nav-active {
+    transform: translateX(-20px);
+  }
+
+  .nav-active {
+    transition: all 0.2s ease-in-out;
+    transform: translateX(0);
+  }
+
+  .navlinks > li > a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .desktop-socials {
+    scale: 0.9;
+  }
+
+  .copyright {
+    margin: 8px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
     header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+      display: none;
     }
-    
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        box-sizing: border-box;
-        padding-top: 64px;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 64px;
-        width: var(--sidebarWidth);
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .portrait-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
-    }
-
-    .portrait-container img {
-        border-radius: 50%;
-    }
-
-    h1 {
-        margin: 0px;
-    }
-
-    .heading2 {
-        margin: 0px;
-        font-size: 1.2rem;
-    }
-
-    nav {
-    }
-    .navlinks {
-        padding-left: 0px;
-        list-style-type: "// ";
-        list-style-position: inside;
-    }
-
-    .navlinks > li {
-        margin-top: 8px;
-        margin-bottom: 8px;
-        font-size: 1.2rem;
-    }
-
-    .navlinks > li > a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .copyright {
-        flex-grow: 1;
-        text-align: center;
-    }
-
-    @media screen and (max-width: 768px) {
-        header {
-            display: none;
-        }
-    }
+  }
 </style>

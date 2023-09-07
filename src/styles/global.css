@@ -1,14 +1,5 @@
-:root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-}
 html {
     font-family: system-ui, sans-serif;
-    background-color: #F6F6F6;
-}
-code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-        Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .heading2 {
@@ -16,10 +7,17 @@ code {
     font-size: 2rem;
 }
 
-.bold {
-    font-weight: bold;
+ul {
+    list-style-type: none;
+    padding-left: 0px;
 }
 
 main {
-    padding-left: 350px;
+    margin-left: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 0px;
+    }
 }

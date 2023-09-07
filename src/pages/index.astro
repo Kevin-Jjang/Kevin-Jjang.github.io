@@ -1,21 +1,19 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
-import Card from "../components/Card.astro";
-import SkillCard from "../components/SkillCard.astro";
 import PortfolioCard from "../components/PortfolioCard.astro";
+import LiteratureCard from "../components/LiteratureCard.astro";
 ---
 
 <LandingLayout title={"Kevin Jang"}>
 	<main>
 		<p id="about">
-			I recently graduated from the University of California, San Diego with a <strong
-				>Bachelor's degree in Computer Science</strong
-			> and a <strong> minor in Literature/Writing</strong>. Currently, I have
-			been the lead frontend developer of Other People Magazine for over two
-			years working on new features to display and promote published works over
-			the internet. I am primarily interested in developing products that expand
-			what creators can do to enhance their creativity, accessibility, or
-			marketability in innovative ways.
+			I recently graduated from the University of California, San Diego with a
+			Bachelor's degree in Computer Science and a minor in Literature/Writing.
+			Currently, I have been the lead frontend developer of Other People
+			Magazine for over two years working on new features to display and promote
+			published works over the internet. I am primarily interested in developing
+			products that expand what creators can do to enhance their creativity,
+			accessibility, or marketability in innovative ways.
 		</p>
 
 		<a href="kevin-jang-resume.pdf" id="resume-download" class="heading2">
@@ -37,7 +35,6 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 		</a>
 
 		<h2 id="portfolio">Experience</h2>
-		
 
 		<ul>
 			<PortfolioCard
@@ -54,8 +51,8 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 				href="https://docs-git-main-other-people.vercel.app/docs/calla-lily/lighthouse"
 				title="Google Lighthouse CI Automated Audits"
 				date="AUG 2023"
-				body="Description"
-				tags={["CI/CD", "GitHub Actions"]}
+				body="I set up an automated workflow to run Lighthouse audits in-bulk over all pages of the Other People website. This CI workflow uses the Lighthouse CI Action, but preprocessing and postprocessing is done to get the necessary outputs from the reports."
+				tags={["CI/CD", "GitHub Actions", "API"]}
 				subProject={true}
 			/>
 
@@ -64,7 +61,7 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 				title="Literary Arts Recommendation System"
 				date="AUG 2023"
 				body="I developed the recommendation system for Other People by combining methods to extract features from textual content and a neural network to discern features from artwork. I built and used the Other People API endpoints to extract data from the literary works used in the system. After researching different methods and strategies for analyzing the similarity of two works irrespective of end user information, the recommendation model adequately returns a diverse and novel set of recommendations for each literary or artistic work."
-				tags={["Python", "Lighthouse"]}
+				tags={["Python", "Recommendation Systems", "Machine Learning", "API"]}
 				subProject={true}
 			/>
 
@@ -105,10 +102,9 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 			/>
 		</ul>
 
-		<h2 id="school-projects">Relevant School Projects</h2>
+		<h2 id="projects">Relevant School Projects</h2>
 		<ul>
 			<PortfolioCard
-				href=""
 				title="Authentication and Analytics Web Server"
 				date="APR 2021 - JUN 2021"
 				position="Frontend Developer"
@@ -127,23 +123,61 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 		</ul>
 
 		<h2 id="literature">Literature</h2>
-		
+		<h3>Publications</h3>
+		<ul>
+			<LiteratureCard
+				href="https://issuu.com/studentartspaces/docs/sas_zine_digital_copy"
+				date="SPRING 2020"
+				title={`"Into the World"`}
+				publisher="Student Art Spaces"
+				genre="Poetry"
+				body={`Published in "Creativity During the Pandemic Zine", My name is misspelled as "Kevin Wang"... In my media publishing work, I have also experienced many cases of misspelled names. Due to that I contact the creators to confirm before publishing onto the website.`}
+				tags={["Fiction"]}
+			/>
+			<LiteratureCard
+				href="https://inlandiajournal.com/kevin-jang/"
+				date="SPRING 2019"
+				title={`"What's Cooking?" and "I Hear a Ringing in my Ears"`}
+				publisher="Inlandia Journal"
+				genre="Poetry"
+				body="Published in their annual Teen Issue."
+				tags={["Fiction"]}
+			/>
+		</ul>
+		<h3>Personal Selections</h3>
+		<LiteratureCard
+			href="/literature/kevin-jang-preheating-batter.pdf"
+			date="DEC 2022"
+			title="Preheating Batter"
+			genre="Screenplay"
+			tags={["Fiction", "Multiverse"]}
+		/>
+		<LiteratureCard
+			href="/literature/sunshine-showers"
+			date="NOV 2020"
+			title="Sunshine Showers"
+			genre="Poetry"
+			tags={["Nonfiction", "Iambic Pentameter"]}
+		/>
 	</main>
 </LandingLayout>
 
 <style>
 	main {
-		margin-left: 350px;
-		margin-right: auto;
 		padding-top: 0px;
 		padding-left: 32px;
 		padding-right: 32px;
 		padding-bottom: 32px;
-		width: auto;
+		max-width: 1024px;
 	}
 
 	#about {
 		margin-top: 0px;
+		margin-bottom: 64px;
+	}
+
+	#literature {
+		margin-top: 200px;
 	}
 
 	h1 {
@@ -158,20 +192,39 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 
 	#resume-download {
 		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: fit-content;
 		text-align: center;
 		text-decoration: none;
 		color: #fff;
-	}
-
-	@media screen and (max-width: 768px) {
-		main {
-			margin-left: 0px;
-		}
+		background: #ffffff;
+		background: -moz-linear-gradient(
+			135deg,
+			rgb(255, 255, 255) 25%,
+			rgba(0, 212, 255, 1) 100%
+		);
+		background: -webkit-linear-gradient(
+			135deg,
+			rgb(255, 255, 255) 25%,
+			rgba(0, 212, 255, 1) 100%
+		);
+		background: linear-gradient(
+			135deg,
+			rgb(255, 255, 255) 25%,
+			rgba(0, 212, 255, 1) 100%
+		);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ff0081",GradientType=1);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	@media screen and (min-width: 768px) {
+		main {
+			margin-right: 64px;
+		}
 		#about {
-			padding-top: 128px;
+			padding-top: 200px;
 		}
 	}
 </style>
