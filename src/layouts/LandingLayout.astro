@@ -36,15 +36,18 @@ const { title } = Astro.props;
 		body?.style.setProperty("--mouse-y", thisY + "px");
 	});
 </script>
+
 <style>
 	main {
 		margin-right: auto;
 		width: auto;
+		overflow-y: scroll;
 	}
+
 	html {
 		scroll-behavior: smooth;
-
 	}
+
 	body {
 		display: flex;
 		flex-direction: column;
@@ -67,6 +70,7 @@ const { title } = Astro.props;
 		transform: translate(-50%, -50%);
 		z-index: -1;
 	}
+
 	body:hover::before {
 		--diameter: 400px;
 	}
