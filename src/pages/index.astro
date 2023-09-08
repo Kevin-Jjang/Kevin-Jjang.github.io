@@ -16,7 +16,12 @@ import LiteratureCard from "../components/LiteratureCard.astro";
 			accessibility, or marketability in innovative ways.
 		</p>
 
-		<a href="kevin-jang-resume.pdf" id="resume-download" class="heading2">
+		<a
+			href="kevin-jang-resume.pdf"
+			target="_blank"
+			id="resume-download"
+			class="heading2"
+		>
 			Download Resume
 			<svg
 				width="32px"
@@ -105,17 +110,25 @@ import LiteratureCard from "../components/LiteratureCard.astro";
 		<h2 id="projects">Relevant School Projects</h2>
 		<ul>
 			<PortfolioCard
+				href="/kevin-jang-web-accessibility-2022"
+				title="Web Accessibility Compliance in 2022"
+				date="SEPT 2022 — DEC 2022"
+				body="In a group of four developers, we worked on a university research project to determine how accessible many governmental or public servicing websites were to the general public as it is necessary for everyone to be able to access vital information that they may need to live. My role was to collect lighthouse reports for one of the categories and then find interesting correlations after another teammate generated heatmaps of the data."
+				tags={["Accessibility", "Google Lighthouse"]}
+			/>
+
+			<PortfolioCard
 				title="Authentication and Analytics Web Server"
-				date="APR 2021 - JUN 2021"
+				date="APR 2021 — JUN 2021"
 				position="Frontend Developer"
 				body="In a group of three developers, we worked on a university project to learn how to configure an apache server. The significant takeaways from this project were learning about common gateway interfaces to output webpages in Python, Go, and C. We also built a RESTful using PHP functions to construct an authentication frontend and connected the webapp to a third-party logging system to analyze insights about our webpages."
 				tags={["Apache", "Python", "PHP", "MySQL", "Cookies"]}
 			/>
 
 			<PortfolioCard
-				href=""
+				href="https://github.com/AlexisChen99/cse110-w21-group4"
 				title="Pomodoro Timer"
-				date="JAN 2023 - MAR 2021"
+				date="JAN 2021 — APR 2021"
 				position="UI & Frontend"
 				body="In a group of eight developers, I was assigned the role of UI/UX and later worked on the frontend of the web app halfway through the project. We collectively agreed to do a fun theme to encapsulate all of this while considering issues such as how distractible the interface could be. I focused on multilingual support and accessibility as the designer so that the app could be used by a wider audience of screen reader or non-English users. Then, I worked on the task functionality to let users jot down tasks they want to complete."
 				tags={["Accessibility", "Screen Readers", "Multilingual Support"]}

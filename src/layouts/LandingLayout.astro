@@ -20,6 +20,24 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} - Kevin Jang</title>
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-E4YB936H83"
+	></script>
+	<script>
+		{
+			`
+    if (document.location.hostname.includes('kevinjjang')) {
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-E4YB936H83");
+		`;
+		}
+	</script>
+
 	<body>
 		<HeaderDesktop />
 		<HeaderMobile />

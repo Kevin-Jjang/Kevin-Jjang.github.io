@@ -6,7 +6,7 @@ import Socials from "./Socials.astro";
 <header>
   <div class="kevinjang">
     <div class="portrait-container">
-      <img alt="Kevin Jang" src="/portrait.webp" />
+      <img alt="Kevin Jang" src="/portrait-192.webp" />
     </div>
 
     <div class="name">
@@ -27,12 +27,6 @@ import Socials from "./Socials.astro";
 
 </header>
 <style>
-  @media screen and (min-width: 768px) {
-    header {
-      display: none;
-    }
-  }
-
   header {
     margin: 32px 16px;
   }
@@ -41,16 +35,18 @@ import Socials from "./Socials.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    column-gap: 10px;
   }
 
   .portrait-container {
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
+    width: 128px;
   }
 
   .portrait-container img {
     border-radius: 50%;
+    max-width: 128px;
   }
 
   h1 {
@@ -101,5 +97,11 @@ import Socials from "./Socials.astro";
   .copyright {
     flex-grow: 1;
     text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    header {
+      display: none;
+    }
   }
 </style>
