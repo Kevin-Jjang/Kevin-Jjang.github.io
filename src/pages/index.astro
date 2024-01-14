@@ -10,10 +10,10 @@ import LiteratureCard from "../components/LiteratureCard.astro";
 			I recently graduated from the University of California, San Diego with a
 			Bachelor's degree in Computer Science and a minor in Literature/Writing.
 			Currently, I have been the lead frontend developer of Other People
-			Magazine for over two years working on new features to display and promote
-			published works over the internet. I am primarily interested in developing
+			Magazine for over two and a half years working on new features to display and promote
+			published works over the internet. I am primarily interested in developing 
 			products that expand what creators can do to enhance their creativity,
-			accessibility, or marketability in innovative ways.
+			accessibility, or marketability in innovative ways while ensuring their works are protected.
 		</p>
 
 		<a
@@ -49,15 +49,23 @@ import LiteratureCard from "../components/LiteratureCard.astro";
 				position="Lead Frontend Developer"
 				body="Maintained, developed, and enhanced the Other People Literary Arts website to improve user experience and the ability of our published creatives to have their works read. Please read about the most recent projects and products I developed at Other People Magazine below! (All information below is public)"
 				tags={["Project Management"]}
-				subProject={true}
+				subProject={true} 
 			/>
 
 			<PortfolioCard
+			title="Design System + Brand Updates"
+			date="NOV 2023 — PRESENT"
+			body="Currently leading a small team of designers to reevaluate and improve the UI/UX of the website. Developing a design system in Storybook with collaboration done in Figma consolidates a uniform brutalist-minimalist aesthetic that future developers and designers can quickly jump into."
+			tags={["Teamwork", "UI/UX", "Storybook", "Figma"]}
+			subProject={true}
+		/>
+
+			<PortfolioCard
 				href="https://docs-git-main-other-people.vercel.app/docs/calla-lily/lighthouse"
-				title="Google Lighthouse CI Automated Audits"
-				date="AUG 2023"
-				body="I set up an automated workflow to run Lighthouse audits in-bulk over all pages of the Other People website. This CI workflow uses the Lighthouse CI Action, but preprocessing and postprocessing is done to get the necessary outputs from the reports."
-				tags={["CI/CD", "GitHub Actions", "API"]}
+				title="Automated Testing & Google Lighthouse CI Audits"
+				date="AUG — OCT 2023"
+				body="I set up automated workflows to run Playwright tests that ensure the core site generator functions were working properly. In addition, I set up automatic Lighthouse audits in-bulk over all pages of website using the Lighthouse CI Action. Preprocessing and postprocessing is done to get the necessary outputs from the reports and is used to maintain the quality of the product."
+				tags={["CI/CD", "Playwright", "GitHub Actions", "API"]}
 				subProject={true}
 			/>
 
